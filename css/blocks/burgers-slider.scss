@@ -1,0 +1,133 @@
+.burgers-slider__item {
+  position: relative;
+  padding-bottom: 85px;
+  display: flex;
+  @include tablets {
+    padding: 0;
+    padding-top: 75px;
+    flex-direction: column;
+  }
+  @include phones {
+    position: relative;
+  }
+}
+
+.burgers-slider__left,
+.burgers-slider__right {
+  flex: 1;
+  @include tablets {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  @include tablets {
+    .section__title {
+      font-size: 50px;
+    }
+  }
+}
+
+.burgers-slider__left {
+  text-align: center;
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  @include tablets {
+    padding-top: 0;
+  }
+}
+
+.burgers-slider__pic {
+  max-width: 98%;
+  max-height: 300px;
+  width: auto !important;
+  @include tablets {
+    max-width: 65%;
+  }
+}
+
+.burgers-slider__right {
+  .section__title {
+    line-height: 1.1em;
+  }
+  @include tablets {
+    padding: 0 13%;
+  }
+  @include phones {
+    padding: 0 5%;
+  }
+}
+
+.burgers-slider__text {
+  color: white;
+  margin-bottom: 18px;
+}
+
+.burgers-slider__price {
+  @include inlineblock(middle);
+  color: $red;
+  @include gagalin;
+}
+
+.burgers-slider__price-amount,
+.burgers-slider__price-measure {
+  @include inlineblock(bottom);
+  line-height: 1;
+}
+
+.burgers-slider__price-amount {
+  font-size: 72px;
+  @include tablets {
+    font-size: 50px;
+  }
+}
+
+.burgers-slider__price-measure {
+  font-size: 30px;
+}
+
+.burgers-slider__buy {
+  @include inlineblock(bottom);
+  margin-left: 32px;
+}
+
+.burger-slider__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 20px;
+  fill: #fff;
+  z-index: 20;
+}
+
+.burger-slider__arrow {
+  width: 100%;
+  height: 100%;
+}
+
+.burger-slider__btn_next {
+  right: -20px;
+  svg {
+    transform: rotate(-90deg);
+  }
+  @include tablets {
+    right: -10px;
+  }
+  @include phones {
+    right: -10px;
+  }
+}
+
+.burger-slider__btn_prev {
+  left: -20px;
+  @include tablets {
+    left: -10px;
+  }
+  @include phones {
+    left: -10px;
+  }
+  svg {
+    transform: rotate(90deg);
+  }
+}

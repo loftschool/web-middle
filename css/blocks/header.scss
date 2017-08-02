@@ -1,0 +1,31 @@
+.header {
+	padding-top: 12px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__logo {
+	@include laptop {
+		width: 15%;
+	}
+}
+
+.header__links {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu {
+	flex: 1;
+	text-align: right;
+	margin-right: 20px;
+
+	@include laptop {
+		width: 85%;
+	}
+
+	@include tablets {
+		text-align: right;
+	}
+}

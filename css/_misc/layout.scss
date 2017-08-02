@@ -1,0 +1,94 @@
+html {
+  @include laptop {
+    font-size: 15px;
+  }
+  @include phones {
+    font-size: 13px;
+    // font-size: 3vmin;
+  }
+}
+
+// styles
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.42;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  @include ubuntu();
+  color: $black;
+  &.locked {
+    overflow: hidden;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  max-width: 940px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  &_centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: 100%; //min-width: $container-width + 20px;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.maincontent {
+  height: 100%;
+  transition: 1s;
+  will-change: transform;
+  min-height: 650px;
+}
+
+// tag styles reset
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style: none;
+  }
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}

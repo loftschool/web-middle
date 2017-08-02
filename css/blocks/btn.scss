@@ -1,0 +1,12 @@
+.btn {
+	@include inlineblock();
+	background: $orange;
+	font-size: 13px;
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5px;
+	padding: 9px 16px;
+	@include ubuntu(medium);
+}

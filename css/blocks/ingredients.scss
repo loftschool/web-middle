@@ -1,0 +1,105 @@
+.ingredients {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background: rgba($red, .4);
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
+  transition: .3s;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include phones {
+    position: static;
+    margin-top: -74px;
+  }
+  &.ingredients_active {
+    background: $red;
+    .ingredients__dropdown {
+      left: 100%;
+      opacity: 1;
+      @include phones {
+        left: 93px;
+        right: 0;
+      }
+    }
+  }
+  @include tablets() {
+    top: 0;
+  }
+}
+
+.ingredients__icon {
+  width: 100%;
+  height: 60%;
+  fill: #fff;
+}
+
+.ingredients__icon-text {
+  color: white;
+  font-size: 14px;
+  @include gagalin;
+  text-align: center;
+}
+
+.ingredients__dropdown {
+  padding: 20px;
+  background: rgba(#fff, .9);
+  position: absolute;
+  width: 270px;
+  border-radius: 7px;
+  left: -9999px;
+  opacity: 0;
+  transition: opacity .3s;
+  z-index: 10;
+  top: 0;
+  @include phones {
+    width: auto;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    left: -29px;
+  }
+}
+
+.ingredients__close {
+  display: none;
+  @include phones {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.ingredients__close-btn {
+  width: 100%;
+  height: 100%;
+  fill: #eb8262;
+}
+
+.ingredients__table {
+  width: 100%;
+  @include phones {
+    width: 80%;
+  }
+}
+
+.ingredients__table-cell {
+  vertical-align: middle;
+  padding: 8px 0;
+}
+
+.ingredients__table-icon {
+  max-width: 60%;
+  height: 40px;
+}
