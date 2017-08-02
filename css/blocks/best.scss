@@ -1,0 +1,23 @@
+.best {
+  background: url('../img/bg/best.jpg') center center no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.best__item {
+  margin: 0 15px;
+  flex: 1;
+}
+
+.best__list {
+  display: flex;
+}
+
+.best__pic {
+  height: 90px;
+}
+
+.best__icon {
+  width: 100%;
+  height: 100%;
+}

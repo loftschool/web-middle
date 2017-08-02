@@ -1,0 +1,11 @@
+.section-title {
+  @include gagalin();
+  font-size: 72px;
+  color: $yellow;
+  margin-bottom: 25px;
+
+  &_color_black {
+    color: $black;
+  }
+}
+

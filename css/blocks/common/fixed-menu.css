@@ -1,0 +1,18 @@
+.fixed-menu {
+  position: fixed;
+  top: 80px;
+  right: 45px;
+}
+
+.fixed-menu__item {
+  margin-bottom: 10px;
+}
+
+.fixed-menu__link {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  border: 1px solid #fff;
+}

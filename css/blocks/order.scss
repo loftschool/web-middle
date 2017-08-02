@@ -1,0 +1,23 @@
+.order {
+  background: #000;
+}
+
+.form__row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form__input {
+  font-size: 16px;
+  padding: 14px;
+  background: #fff;
+  border-radius: 7px;
+  border: 0;
+  flex: 1;
+  margin-left: 20px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
