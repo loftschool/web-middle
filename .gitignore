@@ -3,5 +3,5 @@
 prepros.cfg
 img/
 css/main.css
-css/main.map.css
+css/main.css.map
 css/vendors.min.css

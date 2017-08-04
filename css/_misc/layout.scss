@@ -1,10 +1,19 @@
+html {
+  @include laptop {
+    font-size: rem(15px);
+  }
+  @include phones {
+    font-size: rem(13px);
+  }
+}
+
 html,
 body {
   height: 100%;
 }
 
 body {
-  font-size: 16px;
+  font-size: rem(16px);
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
   position: relative;
@@ -15,8 +24,8 @@ body {
 .container {
   margin: 0 auto;
   position: relative;
-  width: 940px;
-  // width: 95%;
+  max-width: rem(940px);
+  width: 95%;
   display: flex;
   flex-direction: column;
 }
@@ -24,7 +33,7 @@ body {
 .wrapper {
   position: relative;
   width: 100%;
-  min-width: 940px + 20px;
+  // min-width: rem(940px) + rem(20px);
   min-height: 100%;
   overflow: hidden;
 }
@@ -68,10 +77,10 @@ footer {
   box-sizing: border-box;
 }
 
-.section {
-  min-height: 650px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+// .section {
+//   // min-height: rem(650px);
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }

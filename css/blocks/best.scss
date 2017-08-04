@@ -1,23 +1,67 @@
 .best {
-  background: url('../img/bg/best.jpg') center center no-repeat;
+  background: url("../../img/bg/best.jpg") no-repeat;
   background-size: cover;
   text-align: center;
+  display: flex;
+  align-items: center;
+  background-position: center center;
+  .section__title {
+    margin-bottom: rem(80px);
+    @include tablets {
+      margin-bottom: rem(40px);
+    }
+  }
 }
 
-.best__item {
-  margin: 0 15px;
-  flex: 1;
+.best__icon-pic {
+  width: 90%;
+  height: rem(100px);
+  svg {
+    max-width: 95%;
+  }
+  @include phones {
+    position: static;
+    transform: none;
+  }
 }
 
 .best__list {
   display: flex;
+  @include phones() {
+    flex-direction: column;
+  }
 }
 
-.best__pic {
-  height: 90px;
+.best__item {
+  margin-bottom: rem(50px);
+  padding: 0 rem(15px);
+  display: flex;
+  flex-direction: column;
+  @include phones {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: rem(25px);
+  }
 }
 
 .best__icon {
-  width: 100%;
-  height: 100%;
+  @include phones {
+    margin-right: rem(20px);
+    width: 30%;
+  }
+}
+
+.best__desc {
+  @include phones {
+    text-align: left;
+    display: block;
+    width: 65%;
+  }
+}
+
+.best__title {
+  font-size: rem(24px);
+  @include lifehack;
+  color: $black;
+  margin-bottom: rem(20px);
 }

@@ -1,0 +1,126 @@
+.team-acco {
+	@include tablets {
+		padding-bottom: rem(20px);
+	}
+}
+
+.team-acco__item {
+  margin-bottom: rem(40px);
+  
+  @include tablets {
+    margin-bottom: rem(30px);
+  }
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&.active {
+		.team-acco__trigger {
+			color: $yellow;
+
+			&:before {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+}
+
+.team-acco__trigger {
+	color: #fff;
+	font-size: rem(14px);
+	@include gagalin;
+	text-decoration: none;
+	position: relative;
+	display: block;
+	margin-bottom: rem(20px);
+
+	&:before, &:after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: rem(-18px);
+		top: rem(8px);
+		width: 0;
+    height: 0;
+	}
+
+	&:before {
+		border-top: rem(7px) solid $yellow;
+		border-left: rem(5px) solid transparent;
+		border-right: rem(5px) solid transparent;
+		border-bottom: rem(0px) solid transparent;
+		transform: rotate(0deg);
+		transition: .3s;
+	}
+
+	&:after {
+		display: none;
+		border-bottom: rem(7px) solid $yellow;
+		border-left: rem(5px) solid transparent;
+		border-right: rem(5px) solid transparent;
+		border-top: rem(0px) solid transparent;
+	}
+
+	@include tablets {
+		display: inline-block;
+		font-size: rem(25px);
+
+		&:before {
+			margin-top: rem(10px);
+		}
+	}
+}
+
+.team-acco__content {
+	@extend %clearfix;
+	padding-top: rem(14px);
+	display: none;
+
+	@include tablets {
+		padding: 0 25%;
+	}
+}
+
+.team-acco__pic {
+	text-align: center;
+	width: 30%;
+
+	@include tablets {
+		margin-bottom: rem(15px);
+	}
+}
+
+.team-acco__img {
+	@include inlineblock();
+	width: rem(100px);
+	height: rem(100px);
+	@include cover;
+	border-radius: 50%;
+}
+
+.team-acco__text {
+	width: 70%;
+}
+
+.team-acco__pic, .team-acco__text {
+	float: left;
+
+	@include tablets {
+		float: none;
+		width: 100%;
+	}
+}
+
+.team-acco__title {
+	@include ubuntu(bold);
+	font-size: rem(14px);
+	color: #fff;
+	margin-bottom: rem(14px);
+}
+
+.team-acco__text-content {
+	@include ubuntu(light);
+	color: #fff;
+	font-size: rem(14px);
+}

@@ -1,0 +1,72 @@
+.nav {
+	@include inlineblock(middle);
+
+	@include tablets {
+		display: none;
+	}
+
+	&_hamburger {
+		width: auto;
+
+		.nav__item {
+			display: block;
+			text-align: center;
+			opacity: 0;
+			animation-fill-mode: forwards;
+
+			&:after {
+				display: block;
+				margin: rem(15px) auto;
+			}
+		}
+
+		@include tablets {
+			display: block;
+		}
+	}
+}
+
+.nav__list {
+	width: 100%;
+	@extend %clearfix;
+
+	@include laptop {
+		text-align: center;
+	}
+}
+
+.nav__item {
+	white-space: nowrap;
+	display: inline-block;
+	vertical-align: middle;
+
+	&:last-child {
+		margin-right: 0;
+		&:after {
+			display: none;
+		}
+	}
+
+	&:after {
+		content: "";
+		@include inlineblock(middle);
+		width: rem(4px);
+		height: rem(4px);
+		border-radius: 50%;
+		background: white;
+		margin: 0 rem(12px);
+	}
+}
+
+.nav__link {
+	@include inlineblock(middle);
+	font-size: rem(13px);
+	text-transform: uppercase;
+	color: white;
+	text-decoration: none;
+	@include ubuntu(medium);
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

@@ -1,0 +1,27 @@
+
+.socials {
+	position: relative;
+	top: 50%;
+}
+
+.socials__item {
+	@include inlineblock(middle);
+	margin-left: rem(10px);
+}
+
+.socials__link {
+	display: inline-block;
+	max-width: rem(23px);
+	max-height: rem(20px);
+	opacity: .3;
+	transition: .3s;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.socials__link-icon {
+  width: rem(20px);
+  height: rem(20px);
+}

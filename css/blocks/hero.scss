@@ -1,75 +1,98 @@
 .hero {
-  background: url('../img/bg/hero-bg.jpg') center center no-repeat;
+  background: url("../../img/bg/hero-bg.jpg") center center no-repeat;
   background-size: cover;
-  justify-content: flex-start;
-}
-
-.hero__wrapper {
-  height: 80%;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-}
-
-.header__btns {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
-
-.nav__list {
-  display: flex;
-  align-items: center;
-}
-
-.nav__item {
-  display: flex;
-  align-items: center;
-
-  &:last-child {
-    &:after {
-      display: none;
-    }
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 4px;
-    background: #fff;
-    border-radius: 50%;
-    margin: 0 16px;
+  position: relative;
+  @include tablets {
+    padding-bottom: rem(100px);
   }
 }
 
-.nav__link {
-  color: #fff;
-  font-size: 13px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.hero__present {
+.hero__content {
   display: flex;
-  align-items: center;
-}
-
-.hero__desc {
-  color: #fff;
-  font-size: 65px;
-  @include lifehack();
-}
-
-.hero__image-pic {
-  max-width: 100%;
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 .hero__container {
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 15%;
+}
+
+.hero__left,
+.hero__right {
+  float: left;
+  width: 50%;
+  @include tablets {
+    float: none;
+    width: 100%;
+  }
+}
+
+.hero__left {
+  @include phones {
+    height: rem(230px);
+  }
+}
+
+.hero__right {
+  padding-top: rem(115px);
+  @include tablets {
+    text-align: center;
+    padding: rem(30px) 20% 0;
+  }
+  @include phones {
+    padding: 0 3%;
+  }
+}
+
+.hero__desc {
+  font-size: rem(65px);
+  color: white;
+  @include lifehack;
+  text-transform: lowercase;
+  line-height: 1em;
+}
+
+.hero__img {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  max-height: 100%;
+
+  @include tablets {
+    max-width: 80%;
+  }
+}
+
+.down-arrow {
+  position: absolute;
+  bottom: rem(20px);
+  left: 50%;
+  width: rem(60px);
+  transform: translateX(-50%);
+  transition: .3s;
+  height: rem(60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    .down-arrow__icon {
+      margin-top: rem(-15px);
+      width: rem(45px);
+      height: rem(45px);
+    }
+  }
+}
+
+.down-arrow__icon {
+  width: rem(40px);
+  height: rem(40px);
+  transition: .3s;
+  fill: #fff;
 }
