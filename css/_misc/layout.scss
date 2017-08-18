@@ -34,22 +34,9 @@ body {
   position: relative;
   width: 100%;
   // min-width: rem(940px) + rem(20px);
-  // min-height: 100%;
+  min-height: 100%;
   overflow: hidden;
-  height: 100%;
 }
-
-.maincontent {
-  height: 100%;
-  min-height: 650px;
-  transition: transform 1s;
-  will-change: transform;
-
-  @include tablets {
-    min-height: auto;
-  }
-}
-
 
 // tag styles reset
 h1,
