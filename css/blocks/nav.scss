@@ -29,7 +29,8 @@
 .nav__list {
 	width: 100%;
 	@extend %clearfix;
-
+  align-items: flex-end;
+  
 	@include laptop {
 		text-align: center;
 	}
