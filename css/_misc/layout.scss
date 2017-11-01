@@ -7,6 +7,7 @@ body {
   font-size: 16px;
   line-height: 1.42;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   position: relative;
   @include ubuntu();
   color: $black;
@@ -71,4 +72,30 @@ footer {
 .section {
   height: 100vh;
   min-height: 650px;
+
+  &_centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.section-title {
+  font-size: 72px;
+  @include gagalin();
+  color: $yellow;
+  margin-bottom: 40px;
+
+  &_color {
+    &_black {
+      color: $black;
+    }
+
+  }
+
+  &_position {
+    &_center {
+      text-align: center;
+    }
+  }
 }

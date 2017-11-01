@@ -1,0 +1,60 @@
+.team {
+  background: url('../img/bg/team.jpg') center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.team__container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  background: rgba(#2f3234, .93);
+  padding-left: 70px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.team-acco__trigger {
+  color: #fff;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: "";
+    height: 0;
+    width: 0;
+    border: 9px solid transparent;
+    border-top-color: $yellow;
+    border-bottom-width: 0px;
+
+  }
+}
+
+.team-acco__content {
+  display: flex;
+}
+
+.team-acco__text {
+  color: #fff;
+}
+
+.team-acco__content {
+  display: none;
+}
+
+.team-acco__item_active {
+  .team-acco__trigger {
+    color: $yellow;
+
+    &:before {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .team-acco__content {
+    display: block;
+  }
+}
