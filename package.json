@@ -1,0 +1,21 @@
+{
+  "name": "ls-middle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "node-sass --watch css/main.scss css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/wowua/ls-middle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/wowua/ls-middle#readme",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
