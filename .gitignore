@@ -5,3 +5,5 @@ img/
 css/main.css
 css/main.css.map
 css/vendors.min.css
+node_modules
+.DS_Store
