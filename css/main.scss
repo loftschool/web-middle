@@ -11,3 +11,17 @@ $red: #e35028;
 @import "_misc/mixins";
 @import "_misc/fonts";
 @import "_misc/layout";
+
+//blocks
+@import "blocks/hero.scss";
+@import "blocks/best.scss";
+@import "blocks/feature.scss";
+@import "blocks/reviews.scss";
+@import "blocks/review.scss";
+@import "blocks/header.scss";
+@import "blocks/menu.scss";
+@import "blocks/btn.scss";
+@import "blocks/section-title.scss";
+@import "blocks/down-arrow.scss";
+
+
