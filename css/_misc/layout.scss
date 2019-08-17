@@ -21,20 +21,12 @@ body {
   overflow: hidden;
 }
 
-.section {
-  height: 100vh;
-  min-height: 650px;
-}
-
 .container {
   width: 940px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  justify-content: center;
 }
-
 
 // tag styles reset
 h1,
@@ -75,3 +67,9 @@ footer {
   box-sizing: border-box;
 }
 
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}

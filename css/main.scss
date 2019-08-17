@@ -4,6 +4,8 @@ $yellow: #f9b43b;
 $black: #2f3234;
 $red: #e35028;
 
+$z-fixed-menu: 100;
+
 //normalize
 @import "_misc/normalize.scss";
 
@@ -12,16 +14,16 @@ $red: #e35028;
 @import "_misc/fonts";
 @import "_misc/layout";
 
-//blocks
+
+@import "blocks/section.scss";
 @import "blocks/hero.scss";
-@import "blocks/best.scss";
-@import "blocks/feature.scss";
-@import "blocks/reviews.scss";
-@import "blocks/review.scss";
 @import "blocks/header.scss";
-@import "blocks/menu.scss";
+@import "blocks/nav.scss";
 @import "blocks/btn.scss";
-@import "blocks/section-title.scss";
-@import "blocks/down-arrow.scss";
-
-
+@import "blocks/title.scss";
+@import "blocks/scroll-down-btn.scss";
+@import "blocks/best.scss";
+@import "blocks/reviews.scss";
+@import "blocks/order.scss";
+@import "blocks/form.scss";
+@import "blocks/fixed-menu.scss";
