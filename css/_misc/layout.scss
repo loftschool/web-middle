@@ -21,6 +21,12 @@ body {
   overflow: hidden;
 }
 
+.container {
+  width: 940px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
 
 // tag styles reset
 h1,
@@ -60,3 +66,9 @@ footer {
   box-sizing: border-box;
 }
 
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}

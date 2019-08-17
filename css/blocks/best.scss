@@ -1,0 +1,27 @@
+.best {
+  background: url('../img/bg/best.jpg') center center / cover no-repeat;
+}
+
+.best__list {
+  display: flex;
+}
+
+.best__item {
+  flex: 1;
+  margin-right: 35px;
+  text-align: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.best__picture {
+  margin-bottom: 34px;
+}
+
+.best__title {
+  font-size: 24px;
+  @include lifehack();
+  margin-bottom: 33px;
+}
