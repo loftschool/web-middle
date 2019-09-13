@@ -2,41 +2,37 @@ const sections = $(".section");
 const display = $(".maincontent");
 let inscroll = false;
 
-const md = new MobileDetect(window.navigator.userAgent);
-const isMobile = md.mobile();
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
 
-const countPosition = sectionEq => {
+const countPositionPercent = sectionEq => {
   return `${sectionEq * -100}%`;
 };
 
-const switchActiveClass = (elems, elemEq) => {
+const switchActiveClass = (elems, elemNdx) => {
   elems
-    .eq(elemEq)
+    .eq(elemNdx)
     .addClass("active")
     .siblings()
     .removeClass("active");
 };
 
 const unBlockScroll = () => {
-  const transitionDuration = 1000;
-  const touchScrollInertionTime = 300;
-
   setTimeout(() => {
     inscroll = false;
-  }, transitionDuration + touchScrollInertionTime);
+  }, 1300); // подождать пока завершится инерция на тачпадах
 };
 
 const performTransition = sectionEq => {
   if (inscroll) return;
-
   inscroll = true;
-  const position = countPosition(sectionEq);
-  const switchFixedMenuActiveClass = () =>
+
+  const position = countPositionPercent(sectionEq);
+  const switchFixedMenuClass = () =>
     switchActiveClass($(".fixed-menu__item"), sectionEq);
 
-  switchFixedMenuActiveClass();
-
   switchActiveClass(sections, sectionEq);
+  switchFixedMenuClass();
 
   display.css({
     transform: `translateY(${position})`
@@ -59,37 +55,36 @@ const scrollViewport = direction => {
   }
 };
 
-$(document).on("wheel", e => {
-  const deltaY = e.originalEvent.deltaY;
-  const direction = deltaY < 0 ? "prev" : "next";
+$(document).on({
+  wheel: e => {
+    const deltaY = e.originalEvent.deltaY;
+    const direction = deltaY > 0 ? "next" : "prev";
+    scrollViewport(direction);
+  },
+  keydown: e => {
+    const tagName = e.target.tagName.toLowerCase();
+    const userTypingInInputs = tagName === "input" || tagName === "textarea";
 
-  scrollViewport(direction);
-});
+    if (userTypingInInputs) return;
 
-$(document).on("keydown", e => {
-  const tagName = e.target.tagName.toLowerCase();
-  const userTypingInInputs = tagName === "input" || tagName === "textarea";
+    switch (e.keyCode) {
+      case 40:
+        scrollViewport("next");
+        break;
 
-  if (userTypingInInputs) return;
-
-  switch (e.keyCode) {
-    case 38: //prev
-      scrollViewport("prev");
-      break;
-    case 40: //next
-      scrollViewport("next");
-      break;
+      case 38:
+        scrollViewport("prev");
+        break;
+    }
   }
 });
 
 $("[data-scroll-to]").on("click", e => {
   e.preventDefault();
-
-  const target = parseInt($(e.currentTarget).attr("data-scroll-to"));
-
-  performTransition(target);
+  performTransition(parseInt($(e.currentTarget).attr("data-scroll-to")));
 });
 
+// разрешаем свайп на мобильниках
 if (isMobile) {
   window.addEventListener(
     "touchmove",
@@ -100,13 +95,11 @@ if (isMobile) {
   );
 
   $("body").swipe({
-    swipe: function(event, direction) {
-      let scrollDirection;
-
-      if (direction === "up") scrollDirection = "next";
-      if (direction === "down") scrollDirection = "prev";
-
-      scrollViewport(scrollDirection);
+    swipe: (event, direction) => {
+      let scrollDirecrion;
+      if (direction === "up") scrollDirecrion = "next";
+      if (direction === "down") scrollDirecrion = "prev";
+      scrollViewport(scrollDirecrion);
     }
   });
 }
