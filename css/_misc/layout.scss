@@ -19,6 +19,7 @@ body {
   position: relative;
   @include ubuntu();
   color: $black;
+  touch-action: none;
 }
 
 .container {
@@ -34,8 +35,14 @@ body {
   position: relative;
   width: 100%;
   // min-width: rem(940px) + rem(20px);
-  min-height: 100%;
+  // min-height: 100%;
+  height: 100%;
   overflow: hidden;
+}
+
+.maincontent {
+  height: 100%;
+  transition: transform 1s;
 }
 
 // tag styles reset
