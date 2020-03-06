@@ -1,0 +1,12 @@
+.features {
+  background: url('../img/bg/best.jpg') center center / cover no-repeat;
+}
+
+.features__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.features__item {
+  width: calc(100% / 3 - 26px);
+}

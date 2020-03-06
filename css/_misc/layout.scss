@@ -21,6 +21,11 @@ body {
   overflow: hidden;
 }
 
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+
 
 // tag styles reset
 h1,
@@ -60,3 +65,11 @@ footer {
   box-sizing: border-box;
 }
 
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
