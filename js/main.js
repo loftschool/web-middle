@@ -5,7 +5,7 @@ let inScroll = false;
 const md = new MobileDetect(window.navigator.userAgent);
 const isMobile = md.mobile();
 
-const changeFixedMenuActiveItem = () => {
+const changeFixedMenuActiveItem = sectionEq => {
   $(".fixed-menu__item")
     .eq(sectionEq)
     .addClass("active")
@@ -37,7 +37,7 @@ const performTransition = sectionEq => {
 
   setTimeout(() => {
     inScroll = false;
-    changeFixedMenuActiveItem();
+    changeFixedMenuActiveItem(sectionEq);
   }, transitionIsOver + mouseInertionIsOver);
 };
 
@@ -58,13 +58,14 @@ const scroller = () => {
 
 $(window).on("wheel", e => {
   const deltaY = e.originalEvent.deltaY;
+  const windowScroller = scroller();
 
   if (deltaY > 0) {
-    scrollToSection("next");
+    windowScroller.next();
   }
 
   if (deltaY < 0) {
-    scrollToSection("prev");
+    windowScroller.prev();
   }
 });
 
@@ -103,9 +104,11 @@ if (isMobile) {
       fingerCount,
       fingerData
     ) {
+      const windowScroller = scroller();
       const scrollDirections = direction === "up" ? "next" : "prev";
 
-      scrollToSection(scrollDirections);
+      windowScroller[scrollDirections]();
+      // scrollToSection(scrollDirections);
     }
   });
 }
